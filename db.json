@@ -1,0 +1,41 @@
+{
+  "header": {
+    "title": "Kia K3",
+    "videoUrl": ""
+  },
+  "testDriveUsers": [
+    {
+      "name": "Akobir",
+      "phone": "931571209",
+      "model": "k5",
+      "comment": "comfort+",
+      "id": "z8M3i0AoTmU"
+    }
+  ],
+  "models": [
+    {
+      "id": "fjMvWRHh1jQ",
+      "name": "kia k5",
+      "price": "891,000,000",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/2025-kia-k5-102-65c522445bc16.jpg?crop=0.616xw:0.519xh;0.171xw,0.227xh&resize=1200:*",
+      "slug": "k5",
+      "complectations": [
+        {
+          "name": "prestige",
+          "title": "mpi-2.9",
+          "price": "910,000,000"
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "name": "Akobir",
+      "phone": "931571209",
+      "model": "sorento",
+      "comment": "zo'r",
+      "id": "A3bZnDIEjg0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
