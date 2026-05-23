@@ -1,9 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useDispatch } from 'react-redux';
+import { sendContact } from '../store/contactSlice';
 
 const Contact: React.FC = () => {
+  const [name, setName] = useState("");
+const [phone, setPhone] = useState("");
+const [model, setModel] = useState("Kia Sonet");
+const dispatch = useDispatch<any>();
   // Animatsiyalarni ishga tushirish
   useEffect(() => {
     AOS.init({
@@ -15,10 +21,30 @@ const Contact: React.FC = () => {
   }, []);
 
   // Formani yuborish
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Xabar yuborildi");
+ const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
+
+  const formData = {
+    name,
+    phone,
+model
   };
+
+try{
+    dispatch(sendContact(formData));
+
+        setName("");
+    setPhone("");
+    setModel("Kia Sonet");
+}catch (error){
+console.log(error);
+
+}
+
+  
+};
 
   return (
     <div className="bg-[#061520] text-[#d5e4f4] antialiased font-sans min-h-screen flex flex-col selection:bg-[#b9c8d8]/30 selection:text-[#b9c8d8]">
@@ -120,6 +146,8 @@ const Contact: React.FC = () => {
                   name="name" 
                   placeholder="Masalan: Aziz Azizov" 
                   type="text" 
+                  value={name}
+                  onChange={(e)=>setName(e.target.value)}
                   required
                 />
               </div>
@@ -134,6 +162,8 @@ const Contact: React.FC = () => {
                   name="phone" 
                   placeholder="+998 __ ___ __ __" 
                   type="tel"
+                  value={phone}
+                  onChange={(e)=>setPhone(e.target.value)}
                   required 
                 />
               </div>
@@ -147,6 +177,8 @@ const Contact: React.FC = () => {
                     className="w-full bg-[#020f1a] border border-[#8e9196]/10 text-[#d5e4f4] px-4 py-4 rounded-lg focus:ring-2 focus:ring-[#b9c8d8] focus:border-transparent outline-none transition-all appearance-none cursor-pointer" 
                     id="model" 
                     name="model"
+                     value={model}
+  onChange={(e) => setModel(e.target.value)}
                   >
                     <option className="bg-[#0e1d28]">Kia Sonet</option>
                     <option className="bg-[#0e1d28]">Kia K5</option>

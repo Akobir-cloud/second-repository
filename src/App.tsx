@@ -13,6 +13,7 @@ import TestDriveUsers from "./pages/Admin/TestDriveUsers";
 import HandleModels from "./pages/Admin/HandleModels";
 import ServiceUsers from "./pages/Admin/ServiceUsers";
 import { ToastContainer } from "react-toastify";
+import Contacts from "./pages/Admin/Contacts";
 
 
 function App() {
@@ -61,8 +62,15 @@ function App() {
             element={<ServiceUsers />}
           />
 
+           <Route
+            path="contacts"
+            element={<Contacts />}
+          />
+
+
         </Route>
 
+         
 
       </Routes>
     </Provider>

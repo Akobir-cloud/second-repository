@@ -4,12 +4,14 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 import headerReducer from "./headerSlice";
 import modelReducer from "./modelSlice";
 import requestReducer from "./requestSlice";
+import contactReducer from './contactSlice'
 
  const store =configureStore({
     reducer:{
       header: headerReducer,
       models: modelReducer,
       requests: requestReducer,
+      contact:contactReducer
     },
     
     

@@ -37,5 +37,13 @@
       "id": "A3bZnDIEjg0"
     }
   ],
+  "contact": [
+    {
+      "name": "Akobir Muzafarov",
+      "phone": "+998 98 157-1209",
+      "model": "Kia K5",
+      "id": "8ZZyPQftmAA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
